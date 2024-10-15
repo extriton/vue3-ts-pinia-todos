@@ -1,0 +1,1 @@
+export type IFilter = 'All' | 'Active' | 'Done'

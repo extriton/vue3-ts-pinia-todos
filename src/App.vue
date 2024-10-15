@@ -1,47 +1,29 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import TodoHeader from '@/components/todos/TodoHeader.vue'
+import TodoFilters from '@/components/todos/TodoFilters.vue'
+import TodoList from '@/components/todos/TodoList.vue'
+import TodoAddItem from '@/components/todos/TodoAddItem.vue'
+import TodoFooter from '@/components/todos/TodoFooter.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="todos-wrap">
+    <TodoHeader />
+    <TodoFilters />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <main class="app-main">
+      <TodoList />
+      <TodoAddItem />
+    </main>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <TodoFooter />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style>
+.todos-wrap {
+  padding: 15px;
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 </style>
